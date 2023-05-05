@@ -7,11 +7,16 @@ import { Contact } from '../contacts.model';
   styleUrls: ['./contact-detail.component.css']
 })
 export class ContactDetailComponent {
-  contacts: Contact[] = [
-    new Contact('1', 'R. Kent Jackson', 'jacksonk@byui.edu', '208-496-3771', '../../assets/images/jacksonk.jpg', 'null'),
-    new Contact('2', 'Rex Barzee', 'barzeer@byui.edu', '208-496-3768', '../../assets/images/barzeer.jpg', 'null')
-  ]
-  constructor() { }
+  public contacts: Contact[];
+  /*   = [
+       new Contact('1', 'R. Kent Jackson', 'jacksonk@byui.edu', '208-496-3771', '../../assets/images/jacksonk.jpg', 'null'),
+       new Contact('2', 'Rex Barzee', 'barzeer@byui.edu', '208-496-3768', '../../assets/images/barzeer.jpg', 'null')
+     ]*/
+  constructor() {
+    this.contacts = [
+      new Contact('', '', '', '', '', '')
+    ];
+  }
   ngOnInit(): void {
     //Here you put what is done when the constructor has been called
   }
