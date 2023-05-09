@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent {
-
+  selectedContact?: any;
   alerta() {
-    alert('selectedContactEvent initialized');
+    alert(this.selectedContact.name);
   }
 }
