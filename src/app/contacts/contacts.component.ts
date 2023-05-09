@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ContactsComponent {
 
+  alerta() {
+    alert('selectedContactEvent initialized');
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Contact } from '../contacts.model';
 
 @Component({
@@ -13,11 +13,18 @@ export class ContactListComponent {
     new Contact('1', 'R. Kent Jackson', 'jacksonk@byui.edu', '208-496-3771', '../../assets/images/jacksonk.jpg', 'null'),
     new Contact('2', 'Rex Barzee', 'barzeer@byui.edu', '208-496-3768', '../../assets/images/barzeer.jpg', 'null')
   ];
+
+  @Output() selectedContactEvent = new EventEmitter<any>();
+
   constructor() {
   };
   ngOnInit() {
   }
+
+  onSelected(contact: Contact) {
+    this.selectedContactEvent.emit(contact);
+  }
   newContact() {
-    alert("You are gay");
+    alert(`You are gay`);
   }
 }
