@@ -1,4 +1,8 @@
+/**
+ Contact TS model
+ **/
 export class Contact {
+
   public id: string;
   public name: string;
   public email: string;

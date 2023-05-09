@@ -6,12 +6,16 @@ import { Contact } from '../contacts.model';
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.css']
 })
+
+/**Contact List Component **/
 export class ContactListComponent {
-  contacts: Contact[] = [
+  public contacts: Contact[] = [
     new Contact('1', 'R. Kent Jackson', 'jacksonk@byui.edu', '208-496-3771', '../../assets/images/jacksonk.jpg', 'null'),
     new Contact('2', 'Rex Barzee', 'barzeer@byui.edu', '208-496-3768', '../../assets/images/barzeer.jpg', 'null')
   ];
-  constructor() { };
+  constructor() {
+
+  };
   ngOnInit() {
 
   }

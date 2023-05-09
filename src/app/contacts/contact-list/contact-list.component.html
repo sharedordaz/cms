@@ -10,15 +10,8 @@
 <div class="row">
   <div class="col-xs-9">
     <a href="#" class="list-group-item clearfix" *ngFor="let contact of contacts">
-      <a href="#" class="list-group-item clearfix">
-        <div class="pull-left">
-          <h4 class="list-group-item-heading">{{ contact.name }}</h4>
-          <!-- <p class="list-group-item-text">{{ contact.email }}</p> -->
-        </div>
-        <span class="pull-right">
-          <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="img-responsive" style="max-height: 100px" />
-        </span>
-      </a>
+      <!-->Inherit to a child element</!-->
+      <app-contact-item></app-contact-item>
     </a>
 
   </div>
