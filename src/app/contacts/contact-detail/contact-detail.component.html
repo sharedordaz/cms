@@ -1,7 +1,8 @@
 <div class="row">
   <div class="col-xs-9">
 
-    <a href="#" class="list-group-item clearfix" style="background-color: #f7f6f6;" *ngFor="let contact of contacts">
+    <a href="#" class="list-group-item clearfix" style="background-color: #f7f6f6;"
+      *ngIf="contact.name != undefined && contact.name != null">
       <h4 class="list-group-item-heading">{{ contact.name }}</h4>
       <div class="pull-left">
         <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="img-responsive" style="max-height: 100px" />
