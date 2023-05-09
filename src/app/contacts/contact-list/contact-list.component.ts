@@ -16,6 +16,8 @@ export class ContactListComponent {
   constructor() {
   };
   ngOnInit() {
-
+  }
+  newContact() {
+    alert("You are gay");
   }
 }
