@@ -8,8 +8,10 @@
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-xs-12">
-            <app-message-item></app-message-item>
+
+          <div class="col-xs-12" *ngFor="let message of messages">
+
+            <app-message-item [message]="message"></app-message-item>
           </div>
         </div>
       </div>

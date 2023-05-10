@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class MessageItemComponent {
   @Input() message?: any
+
+  alerta(text: any) {
+    alert(text);
+  }
+
 }
