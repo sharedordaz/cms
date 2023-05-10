@@ -15,7 +15,7 @@ export class MessageEditComponent {
   onSendMessage(subject: HTMLInputElement, msgText: HTMLInputElement) {
     let currentSender: Message = new Message(200, subject.value, msgText.value, "Myself");
     this.addMessageEvent.emit(currentSender);
-    alert("onSendMessage" + currentSender.subject);
+    //alert("onSendMessage" + currentSender.subject);
   }
   onClear() {
     alert("onSendMessage");

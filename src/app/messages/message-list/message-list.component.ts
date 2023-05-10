@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Message } from '../message.model'
 
 @Component({
@@ -11,6 +11,10 @@ export class MessageListComponent {
     new Message(1, "New Linux Distro", "Please make a new linux distro", "Linus Torvalds"),
   ];
 
+  onAddMessage(message: Message) {
+    this.messages.push(message);
+    //alert(message);
+  }
   alerta(text: any) {
     alert(text);
   }
