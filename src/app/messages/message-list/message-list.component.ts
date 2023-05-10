@@ -9,6 +9,8 @@ import { Message } from '../message.model'
 export class MessageListComponent {
   public messages: Message[] = [
     new Message(1, "New Linux Distro", "Please make a new linux distro", "Linus Torvalds"),
+    new Message(2, "Free Software", "Do free software", "Richard Stallman"),
+    new Message(3, "Bill Gates", "Help me with artificial inteligence", "Bill Gates"),
   ];
 
   onAddMessage(message: Message) {
