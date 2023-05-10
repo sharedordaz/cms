@@ -1,7 +1,7 @@
 /**
  Message TS model
  **/
-export class Document {
+export class Message {
 
   public id: string;
   public subject: string;
