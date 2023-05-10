@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-message-item',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./message-item.component.css']
 })
 export class MessageItemComponent {
-
+  @Input() message?: any
 }
