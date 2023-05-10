@@ -1,8 +1,10 @@
-<app-header></app-header>
+<app-header (selectedHeaderEvent)="selectedFeature = $event; switchView($event);"
+  (click)="alerta(selectedFeature)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-
+      <app-documents></app-documents>
+      <app-message-list></app-message-list>
       <app-contacts></app-contacts>
 
     </div>
