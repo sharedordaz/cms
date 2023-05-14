@@ -12,10 +12,10 @@ export class DocumentListComponent implements OnInit {
 
   //array/list of dummy documents
   documents: Document[] = [
-    new Document('1', 'JavaScript', 'Used mostly for Web Development', 'https://www.w3schools.com/whatis/whatis_js.asp', null),
-    new Document('2', 'CSS', 'Used mostly for styling documents', 'https://www.w3schools.com/whatis/whatis_css.asp', null),
-    new Document('3', 'Typescript', 'A subset of JavaScript that is strongly typed', 'https://www.typescriptlang.org/', null),
-    new Document('4', 'Angular', 'An MVC Framework for Front End Development', 'https://angular.io/', null)
+    new Document('1', 'Linux Mint', 'Distribution made for dairy use and average users', 'https://linuxmint.com', null),
+    new Document('2', 'Debian', 'Distribution that is specially prominent at his stability, good for servers', 'https://www.debian.org/index.es.html', null),
+    new Document('3', 'Fedora', 'Distribution made for flexible uses, based on Red Hat', 'https://fedoraproject.org/es/', null),
+    new Document('4', 'Arch Linux', 'High customizable and minimalistic, but hard to use, linux distribution', 'https://archlinux.org', null)
   ]
 
   constructor() { }
