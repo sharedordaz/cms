@@ -8,7 +8,7 @@ import { Document } from '../document.model';
 })
 export class DocumentListComponent implements OnInit {
   //event emitter
-  @Output() selectedDocumentEvent = new EventEmitter<Document>();
+  @Output() selectedDocumentEvent = new EventEmitter<any>();
 
   //array/list of dummy documents
   documents: Document[] = [
