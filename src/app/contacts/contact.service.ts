@@ -8,7 +8,7 @@ import { MOCKCONTACTS } from "./MOCKCONTACTS";
 export class ContactService {
   contactSelectedEvent = new EventEmitter<Contact>();
   contactChangedEvent = new EventEmitter<Contact[]>();
-  contacts: Contact[] = [];
+  contacts: Contact[];
 
   constructor() {
     this.contacts = MOCKCONTACTS;
@@ -28,7 +28,7 @@ export class ContactService {
 
   }
   //method to delete a contact
-  deleteContact(contact: Contact) {
+  deleteContact(contact: Contact | any) {
     //check if an existent document was passed
     if (contact === null || contact === undefined) {
       return;

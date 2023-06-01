@@ -14,7 +14,7 @@ export class ContactsComponent {
 
   }
   ngOnInit(): void {
-    this.contactService.contactChangedEvent.subscribe((contact: Contact) => {
+    this.contactService.contactChangedEvent.subscribe((contact: any) => {
       this.selectedContact = contact;
     })
   }
