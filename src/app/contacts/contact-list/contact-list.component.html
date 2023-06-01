@@ -2,7 +2,7 @@
   <div class="col-xs-9">
     <div class="list-group-item clearfix" style="background-color: #f7f6f6;">
       <h2 class="pull-left">Contacts</h2>
-      <button class="btn btn-success pull-right" (click)="newContact()">New Contact</button>
+      <a class="pull-right btn btn-success" routerLink="new">New Contact</a>
     </div>
 
   </div>
@@ -11,7 +11,8 @@
   <div class="col-xs-9">
     <a href="#" class="list-group-item clearfix" *ngFor="let contact of contacts">
       <!-->Inherit to a child element using data binding</!-->
-      <app-contact-item (click)="onSelected(contact)" [contact]="contact"></app-contact-item>
+      <app-contact-item *ngFor="let contactItem of contacts" [contact]="contactItem">
+      </app-contact-item>
     </a>
 
   </div>

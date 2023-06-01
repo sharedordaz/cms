@@ -14,12 +14,11 @@ export class ContactsComponent {
 
   }
   ngOnInit(): void {
-    this.contactService.contactSelectedEvent.subscribe((contact: Contact) => {
+    this.contactService.contactChangedEvent.subscribe((contact: Contact) => {
       this.selectedContact = contact;
     })
   }
-
-  alerta() {
-    alert(this.selectedContact.name);
+  alerta(x: any): void {
+    alert(x);
   }
 }

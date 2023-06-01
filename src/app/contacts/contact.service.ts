@@ -6,7 +6,7 @@ import { MOCKCONTACTS } from "./MOCKCONTACTS";
   providedIn: 'root'
 })
 export class ContactService {
-  contactSelectedEvent = new EventEmitter<Contact>();
+  contactChangedEvent = new EventEmitter<Contact[]>();
   contacts: Contact[] = [];
 
   constructor() {
@@ -25,5 +25,22 @@ export class ContactService {
     }
     return null;
 
+  }
+  deleteContact(contact: Contact) {
+    //check if an existent document was passed
+    if (contact === null || contact === undefined) {
+      return;
+    }
+    //get position of document on list
+    const pos = this.contacts.indexOf(contact);
+
+    //if there is no document (index less than 0), exit.
+    if (pos < 0) {
+      return;
+    }
+    //removed document at specified position
+    this.contacts.splice(pos, 1);
+    //emit event to signal that a change has been made, and pass it a new copy of the document list
+    this.contactChangedEvent.emit(this.contacts.slice());
   }
 }
