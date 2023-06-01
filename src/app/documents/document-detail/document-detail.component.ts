@@ -23,7 +23,7 @@ export class DocumentDetailComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         //get the specific document (passing id param) and store it in document
-        this.document = this.documentService.getDocument(params['id']);
+        this.document = this.documentService.getdocument(params['id']);
       }
     )
   }
