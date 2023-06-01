@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = 'cms';
 
-  selectedFeature: string = "documents";
+  //selectedFeature: string = "documents";
 
   alerta(pass: any): void {
     alert(pass);
