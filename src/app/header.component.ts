@@ -5,12 +5,16 @@ import { Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  @Output() selectedHeaderEvent = new EventEmitter<any>();
+  /* @Output() selectedHeaderEvent = new EventEmitter<any>();
 
 
   onSelected(selectedEvent: string) {
     this.selectedHeaderEvent.emit(selectedEvent);
-  }
+  }*/
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }
