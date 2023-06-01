@@ -6,6 +6,7 @@ import { MOCKCONTACTS } from "./MOCKCONTACTS";
   providedIn: 'root'
 })
 export class ContactService {
+  contactSelectedEvent = new EventEmitter<Contact>();
   contactChangedEvent = new EventEmitter<Contact[]>();
   contacts: Contact[] = [];
 
@@ -26,6 +27,7 @@ export class ContactService {
     return null;
 
   }
+  //method to delete a contact
   deleteContact(contact: Contact) {
     //check if an existent document was passed
     if (contact === null || contact === undefined) {

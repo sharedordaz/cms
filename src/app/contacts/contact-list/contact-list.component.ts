@@ -26,7 +26,5 @@ export class ContactListComponent {
   onSelected(contact: Contact) {
     this.contactService.contactSelectedEvent.emit(contact);
   }
-  newContact() {
-    alert(`You are gay`);
-  }
+
 }
