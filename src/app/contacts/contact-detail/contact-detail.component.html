@@ -8,8 +8,8 @@
         <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="img-responsive" style="max-height: 100px" />
       </div>
       <span class="pull-right btn-toolbar" style="margin-top: 35px;">
-        <button class="btn btn-primary">Edit</button>
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-primary" routerLink="edit">Edit</button>
+        <button class="btn btn-danger" (click)="onDelete()">Delete</button>
       </span>
 
 
