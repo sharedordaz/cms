@@ -72,7 +72,8 @@ export class ContactService {
   }
 
   //method to update/replace an existing contact
-  updateContact(originalContact: Contact, newContact: Contact) {
+  updateContact(originalContact: Contact | null | undefined, newContact: Contact | null | undefined) {
+
     //check if contact exists...
     if (originalContact === null || originalContact === undefined || newContact === null || newContact === undefined) {
       //if not, exit function
