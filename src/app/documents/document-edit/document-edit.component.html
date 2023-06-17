@@ -5,30 +5,34 @@
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="name">Document Title:</label>
-          <input [ngModel]="document?.name" name="name" required type="text" id="name" class="form-control" size="120"
-            max="120">
+          <input [ngModel]="document?.name" name="name" #DocName="ngModel" required type="text" id="name"
+            class="form-control" size="120" max="120">
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="description">Document Description:</label>
-          <input [ngModel]="document?.description" name="description" type="text" id="description" class="form-control"
-            size="120" max="255">
+          <input [ngModel]="document?.description" name="description" #DocDesc="ngModel" type="text" id="description"
+            class="form-control" size="120" max="255">
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="url">Document URL:</label>
-          <input [ngModel]="document?.url" name="url" required type="text" id="url" class="form-control" size="150"
-            max="255">
+          <input [ngModel]="document?.url" name="url" #DocURL="ngModel" required type="text" id="url"
+            class="form-control" size="150" max="255">
         </div>
+      </div>
+
+      <div class="alert-danger alert" *ngIf="!DocName.valid || !DocURL.valid">
+        <p>The Document Title and Document URL are required Fields</p>
       </div>
 
       <div class="row">
         <div class="col-xs-12 btn-toolbar">
-          <button class="btn btn-success" type="submit">Save</button>
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
           <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
         </div>
       </div>
