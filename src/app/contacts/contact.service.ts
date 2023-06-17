@@ -91,8 +91,7 @@ export class ContactService {
     //set the id of new contact to be tht of the original
     newContact.id = originalContact.id;
     //set the contact in the list to be the new contact
-    let document: any;
-    document[pos] = newContact;
+    this.contacts[pos] = newContact;
     //create copy
     const contactListClone = this.contacts.slice();
     //emit/signal a change passing the copy

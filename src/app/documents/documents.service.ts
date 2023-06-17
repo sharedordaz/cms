@@ -91,8 +91,7 @@ export class DocumentsService {
     //set the id of new document to be tht of the original
     newDocument.id = originalDocument.id;
     //set the document in the list to be the new document
-    let document: any;
-    document[pos] = newDocument;
+    this.documents[pos] = newDocument;
     //create copy
     const documentListClone = this.documents.slice();
     //emit/signal a change passing the copy

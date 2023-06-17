@@ -27,19 +27,21 @@ export class DocumentEditComponent {
 
   ngOnInit() {
     this.route.paramMap.subscribe(
-      (params: Params) => {
-        const id: string = params["id"]
-        //alert(id);
+      (params: any) => {
+        const id = params.params.id;
+        //console.log(id);
         //if id parameter is undefined or null then
         if (!id) {
+          console.log("Undefined Lame")
           this.editMode = false
           return
         }
+        this.originalDocument = this.documentsService.getdocument(id)
+
         if (this.originalDocument === undefined || this.originalDocument === null) {
           return
         }
         else {
-          this.originalDocument = this.documentsService.getdocument(id)
           this.editMode = true;
           this.document = JSON.parse(JSON.stringify(this.originalDocument));
 
