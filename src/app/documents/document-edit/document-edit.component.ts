@@ -15,7 +15,7 @@ export class DocumentEditComponent {
 
   document?: Document | null;
   editMode: boolean = false;
-  originalDocument?: Document | null;
+  originalDocument?: Document | null | undefined;
 
   constructor(
     private documentsService: DocumentsService,
@@ -26,9 +26,10 @@ export class DocumentEditComponent {
   }
 
   ngOnInit() {
-    this.route.params.subscribe(
+    this.route.paramMap.subscribe(
       (params: Params) => {
         const id: string = params["id"]
+        //alert(id);
         //if id parameter is undefined or null then
         if (!id) {
           this.editMode = false
@@ -50,7 +51,14 @@ export class DocumentEditComponent {
   }
 
   onSubmit(form: NgForm) {
-
+    const value = form.value
+    let newDocument = new Document("0", value.name, value.description, value.url, null);
+    if (this.editMode === true) {
+      this.documentsService.updateDocument(this.originalDocument, newDocument);
+    }
+    else {
+      this.documentsService.addDocument(newDocument)
+    }
   }
 
 }

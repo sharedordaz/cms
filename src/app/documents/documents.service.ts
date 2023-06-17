@@ -54,7 +54,7 @@ export class DocumentsService {
   }
 
   //method to add a document when user press add button
-  addDocument(newDocument: Document) {
+  addDocument(newDocument: Document | null | undefined) {
     //if null or undef...
     if (newDocument === null || newDocument === undefined || this.maxDocumentId === undefined) {
       //exit function
@@ -73,7 +73,7 @@ export class DocumentsService {
   }
 
   //method to update/replace an existing document
-  updateDocument(originalDocument: Document, newDocument: Document) {
+  updateDocument(originalDocument: Document | null | undefined, newDocument: Document) {
     //check if document exists...
     if (originalDocument === null || originalDocument === undefined || newDocument === null || newDocument === undefined) {
       //if not, exit function
