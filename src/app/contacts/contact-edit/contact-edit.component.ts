@@ -18,9 +18,10 @@ export class ContactEditComponent implements OnInit {
   constructor(private contactService: ContactService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(
-      (params: Params) => {
-        const id = params['id'];
+    this.route.paramMap.subscribe(
+      (params: any) => {
+        const id = params.params.id;
+        console.log(id);
         if (!id) {
           this.editMode = false;
           return;
