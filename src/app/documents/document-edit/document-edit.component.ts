@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { DocumentsService } from "../documents.service";
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Document } from '../document.model';
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: 'app-document-edit',
@@ -9,6 +10,8 @@ import { Document } from '../document.model';
   styleUrls: ['./document-edit.component.css']
 })
 export class DocumentEditComponent {
+
+  @ViewChild("f") form?: NgForm;
 
   document?: Document | null;
   editMode: boolean = false;
@@ -44,6 +47,10 @@ export class DocumentEditComponent {
   }
   onCancel() {
     this.router.navigate(['/documents'], { relativeTo: this.route });
+  }
+
+  onSubmit(form: NgForm) {
+
   }
 
 }
