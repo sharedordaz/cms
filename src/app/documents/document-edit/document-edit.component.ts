@@ -26,6 +26,8 @@ export class DocumentEditComponent {
   }
 
   ngOnInit() {
+
+    //Check if im editing or submiting a new
     this.route.paramMap.subscribe(
       (params: any) => {
         const id = params.params.id;
