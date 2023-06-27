@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="name">Name:</label>
-          <input [ngModel]="contact?.name" name="name" #ConName="ngModel" type="text" id="name"
+          <input [ngModel]="contact?.name" name="name" #ConName="ngModel" required type="text" id="name"
             class="form-control required" size="120" max="120">
         </div>
       </div>
@@ -12,20 +12,27 @@
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="email">Email:</label>
-          <input [ngModel]="contact?.email" name="email" #ConEmail="ngModel" type="text" id="email"
-            class="form-control required" size="120" max="255">
+          <input [ngModel]="contact?.email" name="email" #ConEmail="ngModel" required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" type="text" id="email" class="form-control required"
+            size="120" max="255">
         </div>
+      </div>
+      <div class="alert-danger alert" *ngIf="!ConEmail.valid && ConEmail.value != '' && ConEmail.value">
+        <p>Please Enter A Valid Email</p>
       </div>
 
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="phone">Phone:</label>
-          <input [ngModel]="contact?.phone" name="phone" #ConPhone="ngModel" type="text" id="phone"
+          <input [ngModel]="contact?.phone" name="phone" #ConPhone="ngModel"
+            pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*" type="text" id="phone"
             class="form-control invalid" size="150" max="255">
 
         </div>
       </div>
-
+      <div class="alert-danger alert" *ngIf="!ConPhone.valid && ConPhone.value != '' && ConPhone.value">
+        <p>Please Enter A Valid Phone</p>
+      </div>
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="imageUrl">Image URL:</label>
@@ -53,10 +60,12 @@
         </div>
       </div>
 
-
+      <div class="alert-danger alert" *ngIf="!ConName.valid || !ConEmail.valid">
+        <p>The Contact Name and Contact Email are required Fields</p>
+      </div>
       <div class="row">
         <div class="col-xs-12 btn-toolbar">
-          <button class="btn btn-success" type="submit">Save</button>
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
           <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
         </div>
       </div>
