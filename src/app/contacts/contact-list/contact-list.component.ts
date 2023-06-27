@@ -11,26 +11,7 @@ import { Contact } from '../contacts.model';
 
 /**Contact List Component **/
 export class ContactListComponent implements OnInit, OnDestroy {
-  /*public contacts: Contact[] = [
-    {
-      id: '1',
-      name: 'Rex Barzee',
-      email: 'barzeer@byui.edu',
-      phone: '208-496-3768',
-      imageUrl: '../../assets/images/barzeer.jpg',
-      group: null
-    },
-    {
-      id: '1',
-      name: 'The Joker',
-      email: 'barzeer@byui.edu',
-      phone: '208-496-3768',
-      imageUrl: '../../assets/images/barzeer.jpg',
-      group: null
-    }
 
-
-  ];*/
   contacts: Contact[] = [];
   private subscription?: any;
 
