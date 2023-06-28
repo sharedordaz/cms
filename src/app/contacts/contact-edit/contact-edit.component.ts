@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Contact } from '../contacts.model';
 import { ContactService } from '../contact.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { CdkDragDrop } from "@angular/cdk/drag-drop"
 @Component({
   selector: 'app-contact-edit',
   templateUrl: './contact-edit.component.html',
@@ -67,13 +68,14 @@ export class ContactEditComponent implements OnInit {
     return false;
   }
   addToGroup($event: any) {
-    const selectedContact: Contact = $event.dragData;
+    console.log("Event: " + $event);
+    /*const selectedContact: Contact = $event.dragData;
     this.invalidGroupContact = this.isInvalidContact(selectedContact);
     if (this.invalidGroupContact) {
       return;
     }
     this.groupContacts.push(selectedContact);
-    this.invalidGroupContact = false;
+    this.invalidGroupContact = false;*/
   }
   onRemoveItem(idx: number) {
     if (idx < 0 || idx >= this.groupContacts.length) {

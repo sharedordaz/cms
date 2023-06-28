@@ -7,6 +7,7 @@ import { DocumentEditComponent } from './documents/document-edit/document-edit.c
 import { DocumentDetailComponent } from './documents/document-detail/document-detail.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
+import { DragDropComponent } from "./drag-drop/drag-drop.component";
 
 //constant for array of routes
 const appRoutes: Routes = [
@@ -14,6 +15,10 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: '/documents',
     pathMatch: 'full'
+  },
+  {
+    path: "drag",
+    component: DragDropComponent
   },
   {
     path: 'documents',

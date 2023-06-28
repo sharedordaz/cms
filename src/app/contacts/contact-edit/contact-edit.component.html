@@ -42,7 +42,7 @@
       </div>
 
       <div class="row">
-        <div class="form-group">
+        <div class="form-group" cdkDropList (cdkDropListDropped)="addToGroup($event)" #DropPoint="cdkDropList">
           <label for="groupList">Group Contacts:</label>
 
           <div class="row" id="groupList" style="min-height: 3rem;">
