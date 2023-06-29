@@ -8,9 +8,10 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-9">
-    <app-contact-item *ngFor="let contactItem of contacts" [contact]="contactItem">
-    </app-contact-item>
-
+  <div class="col-xs-9" *ngFor="let contactItem of contacts">
+    <div cdkDrag>
+      <app-contact-item [contact]="contactItem">
+      </app-contact-item>
+    </div>
   </div>
 </div>

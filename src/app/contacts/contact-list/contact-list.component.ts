@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Output, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, window } from 'rxjs';
 import { ContactService } from '../contact.service';
 import { Contact } from '../contacts.model';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
-  styleUrls: ['./contact-list.component.css']
+  styleUrls: ['./contact-list.component.css'],
 })
 
 /**Contact List Component **/

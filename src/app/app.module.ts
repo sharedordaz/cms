@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+//DEPRECATED THRASH
 //import { DndModule } from "ng2-dnd";
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from "./header.component";
@@ -22,6 +24,7 @@ import { DocumentViewComponent } from './documents/document-view/document-view.c
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 import { FormsModule } from '@angular/forms';
+import { DragDropModule } from "@angular/cdk/drag-drop"
 
 @NgModule({
   declarations: [
@@ -48,7 +51,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     //    DndModule.forRoot(),
-
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
