@@ -37,7 +37,12 @@ export class ContactEditComponent implements OnInit {
         if (this.contact?.group !== null && this.contact?.group !== undefined) {
           this.hasGroup = true;
           this.groupContacts = [...this.contact?.group];
+
         }
+        console.log(this.contactService.draggedContacts);
+        this.contactService.draggedContacts.forEach(element => {
+          this.groupContacts.push(element);
+        });
       }
     )
   }
@@ -83,6 +88,7 @@ export class ContactEditComponent implements OnInit {
       return;
     }
     this.groupContacts.splice(idx, 1);
+    this.contactService.draggedContacts.splice(idx, 1);
     this.invalidGroupContact = false;
   }
 

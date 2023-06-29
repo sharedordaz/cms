@@ -17,7 +17,7 @@ export class ContactService {
   maxContactId?: any;
   contacts: Contact[];
   draggedContact: string | null = null;
-  draggedContacts: string[] = [];
+  draggedContacts: Contact[] = [];
   constructor(private router: Router, private route: ActivatedRoute) {
     this.contacts = MOCKCONTACTS;
     //get the max id at init time
@@ -122,14 +122,20 @@ export class ContactService {
   }
   dragContact(contact: string) {
     this.draggedContact = contact;
-    //console.log("Contact:" + this.draggedContact);
+    console.log("Contact:" + this.draggedContact);
 
     //console.log(this.router.url);
     if (this.router.url.includes("edit")) {
-      this.draggedContacts.push(this.draggedContact);
+      //console.log("It includes")
+      this.contacts.forEach(element => {
+        if (this.draggedContact == element.name) {
+          //console.log("Is the same")
+          this.draggedContacts.push(element)
+          //console.log(this.draggedContacts);
+        }
+      });
     }
 
-    //console.log("Contact List:" + this.draggedContacts);
   }
 
 }
