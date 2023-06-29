@@ -3,6 +3,8 @@ import { Contact } from './contacts.model';
 import { MOCKCONTACTS } from "./MOCKCONTACTS";
 import { Subject } from 'rxjs';
 
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +17,8 @@ export class ContactService {
   maxContactId?: any;
   contacts: Contact[];
   draggedContact: string | null = null;
-  constructor() {
+  draggedContacts: string[] = [];
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.contacts = MOCKCONTACTS;
     //get the max id at init time
     this.maxContactId = this.getMaxId();
@@ -119,7 +122,14 @@ export class ContactService {
   }
   dragContact(contact: string) {
     this.draggedContact = contact;
-    console.log("Contact:" + this.draggedContact);
+    //console.log("Contact:" + this.draggedContact);
+
+    //console.log(this.router.url);
+    if (this.router.url.includes("edit")) {
+      this.draggedContacts.push(this.draggedContact);
+    }
+
+    //console.log("Contact List:" + this.draggedContacts);
   }
 
 }

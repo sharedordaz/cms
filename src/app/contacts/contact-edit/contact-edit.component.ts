@@ -85,9 +85,5 @@ export class ContactEditComponent implements OnInit {
     this.groupContacts.splice(idx, 1);
     this.invalidGroupContact = false;
   }
-  OnDrop($event: CdkDragDrop<string[]>) {
-    console.log("Dropped");
-  }
-
 
 }
