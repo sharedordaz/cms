@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnDestroy, OnInit, Input } from '@angular/core';
 import { Subscription, window } from 'rxjs';
 import { ContactService } from '../contact.service';
 import { Contact } from '../contacts.model';
@@ -17,6 +17,7 @@ export class ContactListComponent implements OnInit, OnDestroy {
   private subscription?: any;
 
   @Output() selectedContactEvent = new EventEmitter<any>();
+  @Input() draggedListElement?: any;
 
   constructor(private contactService: ContactService) {
   };
@@ -33,8 +34,13 @@ export class ContactListComponent implements OnInit, OnDestroy {
   }
 
   drop($event: CdkDragDrop<string[]>) {
+    let draggedContact = $event.container.element.nativeElement.firstElementChild?.textContent;
     //console.log($event)
-    console.log($event.container.element.nativeElement.firstElementChild?.textContent);
+    //console.log(this.draggedListElement);
+
+    if (draggedContact) {
+      this.contactService.dragContact(draggedContact);
+    }
   }
 
   /* onSelected(contact: Contact) {

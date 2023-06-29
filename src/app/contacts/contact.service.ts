@@ -14,7 +14,7 @@ export class ContactService {
 
   maxContactId?: any;
   contacts: Contact[];
-
+  draggedContact: string | null = null;
   constructor() {
     this.contacts = MOCKCONTACTS;
     //get the max id at init time
@@ -117,4 +117,9 @@ export class ContactService {
     //emit event to signal that a change has been made, and pass it a new copy of the document list
     this.contactListChangedEvent.next(this.contacts.slice());
   }
+  dragContact(contact: string) {
+    this.draggedContact = contact;
+    console.log("Contact:" + this.draggedContact);
+  }
+
 }

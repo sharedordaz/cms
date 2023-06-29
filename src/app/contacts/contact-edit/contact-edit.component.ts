@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Contact } from '../contacts.model';
 import { ContactService } from '../contact.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { CdkDrag, CdkDragDrop } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-contact-edit',
   templateUrl: './contact-edit.component.html',
@@ -15,13 +16,14 @@ export class ContactEditComponent implements OnInit {
   editMode: boolean = false;
   hasGroup: boolean = false;
   invalidGroupContact?: boolean;
+
   constructor(private contactService: ContactService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       (params: any) => {
         const id = params.params.id;
-        console.log(id);
+        //console.log(id);
         if (!id) {
           this.editMode = false;
           return;
@@ -83,4 +85,9 @@ export class ContactEditComponent implements OnInit {
     this.groupContacts.splice(idx, 1);
     this.invalidGroupContact = false;
   }
+  OnDrop($event: CdkDragDrop<string[]>) {
+    console.log("Dropped");
+  }
+
+
 }
