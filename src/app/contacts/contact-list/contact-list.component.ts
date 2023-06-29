@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output, OnDestroy, OnInit } from '@angular/cor
 import { Subscription, window } from 'rxjs';
 import { ContactService } from '../contact.service';
 import { Contact } from '../contacts.model';
-import { CdkDrag } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-contact-list',
@@ -30,6 +30,11 @@ export class ContactListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  drop($event: CdkDragDrop<string[]>) {
+    //console.log($event)
+    console.log($event.container.element.nativeElement.firstElementChild?.textContent);
   }
 
   /* onSelected(contact: Contact) {

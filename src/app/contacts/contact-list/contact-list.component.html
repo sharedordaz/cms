@@ -8,10 +8,8 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-9" *ngFor="let contactItem of contacts">
-    <div cdkDrag>
-      <app-contact-item [contact]="contactItem">
-      </app-contact-item>
-    </div>
+  <div class="col-xs-9" cdkDropList #ConList="cdkDropList" *ngFor="let contactItem of contacts">
+    <app-contact-item #appContactItem [contact]="contactItem" cdkDrag (cdkDragDropped)="drop($event)">
+    </app-contact-item>
   </div>
 </div>
