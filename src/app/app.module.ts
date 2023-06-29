@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+//import { DndModule } from "ng2-dnd";
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from "./header.component";
 import { ContactsComponent } from './contacts/contacts.component';
@@ -45,6 +47,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    //    DndModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
