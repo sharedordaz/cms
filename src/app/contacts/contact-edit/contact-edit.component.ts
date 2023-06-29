@@ -16,10 +16,12 @@ export class ContactEditComponent implements OnInit {
   editMode: boolean = false;
   hasGroup: boolean = false;
   invalidGroupContact?: boolean;
+  previousDrag: string | null = null
 
   constructor(private contactService: ContactService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.previousDrag = this.contactService.draggedContact;
     this.route.paramMap.subscribe(
       (params: any) => {
         const id = params.params.id;
@@ -39,7 +41,7 @@ export class ContactEditComponent implements OnInit {
           this.groupContacts = [...this.contact?.group];
 
         }
-        console.log(this.contactService.draggedContacts);
+        //console.log(this.contactService.draggedContacts);
         this.contactService.draggedContacts.forEach(element => {
           this.groupContacts.push(element);
         });
@@ -90,6 +92,16 @@ export class ContactEditComponent implements OnInit {
     this.groupContacts.splice(idx, 1);
     this.contactService.draggedContacts.splice(idx, 1);
     this.invalidGroupContact = false;
+  }
+
+  refreshGroupContacts() {
+    //console.log(this.contactService.draggedContacts);
+    console.log(this.previousDrag);
+    this.contactService.draggedContacts.forEach(element => {
+      this.contactService.draggedContacts = [];
+      this.groupContacts.push(element);
+    });
+
   }
 
 }
